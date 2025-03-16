@@ -10,13 +10,14 @@
 			position: relative;
 			padding: 0 1rem;
 			margin: 0 auto;
-			width: 80%;
+			width: 60%;
 		}
 
 		.step {
-			margin: 10rem auto 4rem auto;
+			margin: 20rem auto 4rem auto;
             color:transparent;
             background-color: transparent;
+			transition:1s;
 		}
 
 		.step.is-active {
@@ -28,7 +29,10 @@
 			text-align: center;
 			padding: 1rem;
 			font-size: 1.5rem;
+			width: 60%;
+			margin:auto;
 		}
+
     </style>
 </head>
 <body>
@@ -45,8 +49,7 @@
     <section id="scrolly">
         <article>
             <div class="step is-active" data-step="1" data-bgimage="url('https://i.ibb.co/WWS4fhrm/IMG-0016.png')" style="padding: 200px 0px;">
-                <p>It doesn’t take an egghead to notice the alarmingly expensive egg prices these days. 
-				</p>
+                <p>It doesn’t take an egghead to notice the alarmingly expensive egg prices these days. </p>
             </div>
             <div class="step" data-step="2" data-bgimage="url('https://i.ibb.co/bgk1dvJw/IMG-0017.png')" style="padding: 200px 0px;">
                 <p>Since 2021, the average price for a dozen eggs has tripled to about $5.</p>
@@ -54,9 +57,8 @@
             <div class="step" data-step="3" data-bgimage="url('https://i.ibb.co/Z6NTxyKV/IMG-0018.png')" style="padding: 200px 0px;">
                 <p><div class="flourish-embed flourish-chart" data-src="visualisation/21969610"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/21969610/thumbnail" width="100%" alt="chart visualization" /></noscript></div></p>
             </div>
-            <div class="step" data-step="4" data-bgimage="url('https://i.ibb.co/0y7XWxt3/IMG-0019.png')" >
-                <p>What are prices like in Evanston?
-				</p>
+            <div class="step" data-step="4" data-bgimage="url('https://i.ibb.co/0y7XWxt3/IMG-0019.png')" style="padding: 200px 0px;">
+                <p>What are prices like in Evanston?</p>
             </div>
 			<div class="step" data-step="5" data-bgimage=none>
 			</div>
@@ -118,9 +120,11 @@
 		}
 
 		function init() {
-			// set random padding for different step heights (not required)
+			
+			// set padding for different step heights (not required)
+
 			step.forEach(function (step) {
-				var v = 100 + Math.floor((Math.random() * window.innerHeight) / 4);
+				var v = 400;
 				step.style.padding = v + "px 0px";
 			});
 
