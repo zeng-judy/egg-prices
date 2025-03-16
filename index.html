@@ -1,0 +1,145 @@
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <script src="https://unpkg.com/scrollama"></script>
+    <style>
+		#scrolly {
+			position: relative;
+		}
+
+		article {
+			position: relative;
+			padding: 0 1rem;
+			margin: 0 auto;
+			width: 80%;
+		}
+
+		.step {
+			margin: 10rem auto 4rem auto;
+            color:transparent;
+            background-color: transparent;
+		}
+
+		.step.is-active {
+            opacity: 0.8;
+			color: black;
+		}
+
+		.step p {
+			text-align: center;
+			padding: 1rem;
+			font-size: 1.5rem;
+		}
+    </style>
+</head>
+<body>
+    <section id="intro">
+        <h1 class="intro__hed">Evanston Egg Prices</h1>
+        <p class="intro__dek">
+            TK dek
+        </p>
+		<p class="byline">
+			By Gracie Kwon, Indra Dalaisaikhan, & Judy Zeng
+		</p>
+    </section>
+
+    <section id="scrolly">
+        <article>
+            <div class="step is-active" data-step="1" data-bgimage="url('https://i.ibb.co/WWS4fhrm/IMG-0016.png')" style="padding: 200px 0px;">
+                <p>It doesn’t take an egghead to notice the alarmingly expensive egg prices these days. 
+				</p>
+            </div>
+            <div class="step" data-step="2" data-bgimage="url('https://i.ibb.co/bgk1dvJw/IMG-0017.png')" style="padding: 200px 0px;">
+                <p>Since 2021, the average price for a dozen eggs has tripled to about $5.</p>
+            </div>
+            <div class="step" data-step="3" data-bgimage="url('https://i.ibb.co/Z6NTxyKV/IMG-0018.png')" style="padding: 200px 0px;">
+                <p><div class="flourish-embed flourish-chart" data-src="visualisation/21969610"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/21969610/thumbnail" width="100%" alt="chart visualization" /></noscript></div></p>
+            </div>
+            <div class="step" data-step="4" data-bgimage="url('https://i.ibb.co/0y7XWxt3/IMG-0019.png')" >
+                <p>What are prices like in Evanston?
+				</p>
+            </div>
+			<div class="step" data-step="5" data-bgimage=none>
+			</div>
+        </article>
+    </section>
+
+	<section id="regular">
+		<p class="plain">
+			Gathering data from four different grocery stores in downtown Evanston, the graph below shows the price of different brands of eggs in addition to whether or not they are organic. 
+		</p>
+		<div class="flourish-embed flourish-chart" data-src="visualisation/22054022"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/22054022/thumbnail" width="100%" alt="chart visualization" /></noscript></div>		
+		<p class="plain">
+			For college students on a budget, eggs are a staple food. They can be used in almost anything for that extra pack of protein. Given the current sale price of eggs, however, it is hard to justify buying eggs that cost almost $10. 
+		</p>
+		<p class="plain">
+			However, with the latest outbreak of Avian Influenza, colloquially referred to as bird flu, dozens of eggs have surged in price. To curb the spread of the virus, farmers have been forced to cull millions of egg-laying hens, reducing the overall supply of eggs as a result. 
+		</p>
+		<p class="plain">
+			In early 2024, the United States Centers for Disease Control and Prevention (CDC) reported the first case in domestic dairy cattle. Then, in April, the first human case was reported. Efforts to contain the virus and mitigate its impact have involved poultry vaccinations and initiatives to combat the outbreak. Yet, the price of eggs has been slow in reflecting these changes. 
+		</p>
+		<p class="plain">
+			Looking at the visualization below, the cost of a dozen eggs was $2.52 in January 2024. Once the virus was detected in March, the price appears to be on a decline through May before continuously rising until it reaches the price of $4.15 at the end of the year. 
+		</p>
+		<div class="flourish-embed flourish-slope" data-src="visualisation/22053126"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/22053126/thumbnail" width="100%" alt="slope visualization" /></noscript></div>		<p class="plain">
+		<p class="plain">
+			Through this, it is evident that prices are slow to react, but consumers can still navigate these expensive times. 
+		</p>
+	</section>
+    
+    <script src="main.js"></script>
+    <script>
+        
+		var scrolly = document.querySelector("#scrolly");
+		var article = scrolly.querySelector("article");
+		var step = article.querySelectorAll(".step");
+
+		// initialize the scrollama
+		var scroller = scrollama();
+
+		// scrollama event handlers
+		function handleStepEnter(response) {
+			// response = { element, direction, index }
+			console.log(response);
+			// add to color to current step
+			response.element.classList.add("is-active");
+
+            // Change background image
+            var bgImage = response.element.dataset.bgimage;
+            if (bgImage) {
+                document.body.style.backgroundImage = bgImage;
+            }
+		}
+
+		function handleStepExit(response) {
+			// response = { element, direction, index }
+			console.log(response);
+			// remove color from current step
+			response.element.classList.remove("is-active");
+		}
+
+		function init() {
+			// set random padding for different step heights (not required)
+			step.forEach(function (step) {
+				var v = 100 + Math.floor((Math.random() * window.innerHeight) / 4);
+				step.style.padding = v + "px 0px";
+			});
+
+			// 1. setup the scroller with the bare-bones options
+			// 		this will also initialize trigger observations
+			// 2. bind scrollama event handlers (this can be chained like below)
+			scroller
+				.setup({
+					step: "#scrolly article .step",
+					debug: false,
+					offset: 1
+				})
+				.onStepEnter(handleStepEnter)
+				.onStepExit(handleStepExit);
+
+		}
+
+		// kick things off
+		init();
+	
+    </script>
+</body>
