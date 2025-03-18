@@ -36,10 +36,10 @@
     </style>
 </head>
 <body>
-    <section id="intro">
-        <h1 class="intro__hed">Evanston Egg Prices</h1>
+    <section id="intro" background-color="white">
+        <h1 class="intro__hed">Scrambling for Affordable Egg Prices</h1>
         <p class="intro__dek">
-            TK dek
+            With the prices rising nationwide, we investigate the local impact in Evanston.
         </p>
 		<p class="byline">
 			By Gracie Kwon, Indra Dalaisaikhan, & Judy Zeng
@@ -48,16 +48,16 @@
 
     <section id="scrolly">
         <article>
-            <div class="step is-active" data-step="1" data-bgimage="url('https://i.ibb.co/WWS4fhrm/IMG-0016.png')" style="padding: 200px 0px;">
+            <div class="step is-active" data-step="1" data-bgimage="url('https://i.ibb.co/QFxrfGR7/IMG-0016-1.png')" style="padding: 200px 0px;">
                 <p>It doesn’t take an egghead to notice the alarmingly expensive egg prices these days. </p>
             </div>
-            <div class="step" data-step="2" data-bgimage="url('https://i.ibb.co/bgk1dvJw/IMG-0017.png')" style="padding: 200px 0px;">
+            <div class="step" data-step="2" data-bgimage="url('https://i.ibb.co/5NR0MNX/IMG-0017-1.png')" style="padding: 200px 0px;">
                 <p>Since 2021, the average price for a dozen eggs has tripled to about $5.</p>
             </div>
-            <div class="step" data-step="3" data-bgimage="url('https://i.ibb.co/Z6NTxyKV/IMG-0018.png')" style="padding: 200px 0px;">
+            <div class="step" data-step="3" data-bgimage="url('https://i.ibb.co/VYyRWr3T/IMG-0018-1.png')" style="padding: 200px 0px;">
                 <p><div class="flourish-embed flourish-chart" data-src="visualisation/21969610"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/21969610/thumbnail" width="100%" alt="chart visualization" /></noscript></div></p>
             </div>
-            <div class="step" data-step="4" data-bgimage="url('https://i.ibb.co/0y7XWxt3/IMG-0019.png')" style="padding: 200px 0px;">
+            <div class="step" data-step="4" data-bgimage="url('https://i.ibb.co/0VWdp6xP/IMG-0019-1.png')" style="padding: 200px 0px;">
                 <p>What are prices like in Evanston?</p>
             </div>
 			<div class="step" data-step="5" data-bgimage=none>
@@ -71,10 +71,10 @@
 		</p>
 		<div class="flourish-embed flourish-chart" data-src="visualisation/22054022"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/22054022/thumbnail" width="100%" alt="chart visualization" /></noscript></div>		
 		<p class="plain">
-			For college students on a budget, eggs are a staple food. They can be used in almost anything for that extra pack of protein. Given the current sale price of eggs, however, it is hard to justify buying eggs that cost almost $10. 
+			For off-campus living college students on a budget, eggs are a staple food. They can be used in almost anything for that extra pack of protein. Given the current sale price of eggs, however, it is hard to justify buying eggs that cost $7.99 at Jewel Osco.
 		</p>
 		<p class="plain">
-			However, with the latest outbreak of Avian Influenza, colloquially referred to as bird flu, dozens of eggs have surged in price. To curb the spread of the virus, farmers have been forced to cull millions of egg-laying hens, reducing the overall supply of eggs as a result. 
+			Egg prices have surged due to the latest outbreak of Avian Influenza, colloquially referred to as bird flu. To curb the spread of the virus, farmers have been forced to cull millions of egg-laying hens, reducing the overall supply of eggs as a result. 
 		</p>
 		<p class="plain">
 			In early 2024, the United States Centers for Disease Control and Prevention (CDC) reported the first case in domestic dairy cattle. Then, in April, the first human case was reported. Efforts to contain the virus and mitigate its impact have involved poultry vaccinations and initiatives to combat the outbreak. Yet, the price of eggs has been slow in reflecting these changes. 
@@ -82,10 +82,17 @@
 		<p class="plain">
 			Looking at the visualization below, the cost of a dozen eggs was $2.52 in January 2024. Once the virus was detected in March, the price appears to be on a decline through May before continuously rising until it reaches the price of $4.15 at the end of the year. 
 		</p>
-		<div class="flourish-embed flourish-slope" data-src="visualisation/22053126"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/22053126/thumbnail" width="100%" alt="slope visualization" /></noscript></div>		<p class="plain">
+		<div class="flourish-embed flourish-slope" data-src="visualisation/22053126"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/22053126/thumbnail" width="100%" alt="slope visualization" /></noscript></div>
+		<p class="plain" style="text-decoration:underline;">
+			Methodology
+		</h3>
 		<p class="plain">
-			Through this, it is evident that prices are slow to react, but consumers can still navigate these expensive times. 
+			To collect data on dozen egg prices in Evanston, we did field-reporting and recorded prices by visiting grocery stores. For remaining missing prices, we visited the grocery stores’ official websites to record the signature dozen egg brand prices. We then added the prices onto a spreadsheet and then plotted the data into Flourish to create the price bar chart.
 		</p>
+		<p class="plain">
+			We obtained the national average dozen egg prices from the U.S. Bureau of Labor Statistics. We then made a pivot table detailing egg prices for each month in the given year to create our third visualization in Flourish.
+		</p>
+	
 	</section>
     
     <script src="main.js"></script>
